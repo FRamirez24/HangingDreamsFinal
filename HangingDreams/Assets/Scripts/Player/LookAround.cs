@@ -12,12 +12,6 @@ public class LookAround : MonoBehaviour
 
     public bool doMoveCamera = true;
 
-    public bool turnOffCamera()
-    {
-        doMoveCamera = false;
-        return doMoveCamera;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
