@@ -23,16 +23,26 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-    
-            Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractorRange))
+
+            Ray ray = new Ray(InteractorSource.position, InteractorSource.forward);
+            if (Physics.Raycast(ray, out RaycastHit hitInfor, InteractorRange))
             {
-                print(hitInfo);
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+                print(hitInfor);
+                if (hitInfor.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {
                     interactObj.Interact();
 
                 }
+            }
+        }
+
+        Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
+        if (Physics.Raycast(r, out RaycastHit hitInfo, InteractorRange))
+        {
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+            {
+                
+
             }
         }
     }

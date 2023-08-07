@@ -9,18 +9,22 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = -9.81f;
 
+    public bool doWalkAround = true;
+
     // Update is called once per frame
     void Update()
     {
+        if (doWalkAround == true)
+        {
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+            Vector3 move = transform.right * x + transform.forward * z;
 
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        // Apply sprinting
+            // Apply sprinting
 
 
-        controller.Move(move * Time.deltaTime * speed);
+            controller.Move(move * Time.deltaTime * speed);
+        }
     }
 }
