@@ -10,6 +10,14 @@ public class LookAround : MonoBehaviour
 
     float xRotation = 0;
 
+    public bool doMoveCamera = true;
+
+    public bool turnOffCamera()
+    {
+        doMoveCamera = false;
+        return doMoveCamera;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +27,17 @@ public class LookAround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if(doMoveCamera == true) 
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90, 90);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90, 90);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        playerbody.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            playerbody.Rotate(Vector3.up * mouseX);
+        }
+        
     }
 }

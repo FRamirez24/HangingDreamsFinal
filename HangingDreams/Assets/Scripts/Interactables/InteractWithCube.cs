@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractWithCube : MonoBehaviour, IInteractable
 
 {
+    public GameObject readingScreen;
     // Start is called before the first frame update
     public void Interact()
     {
@@ -12,6 +13,6 @@ public class InteractWithCube : MonoBehaviour, IInteractable
     }
     private void Start()
     {
-        Debug.Log("Hello World");   
+        readingScreen.SetActive(false);
     }
 }
