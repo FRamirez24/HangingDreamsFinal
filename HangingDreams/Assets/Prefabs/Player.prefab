@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 3144378344177702610}
   - component: {fileID: 3144378344177702609}
   - component: {fileID: -2561032013037108903}
+  - component: {fileID: 5977424246048677235}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -285,3 +286,15 @@ MonoBehaviour:
   Pages: []
   Diary: {fileID: 0}
   i: 0
+--- !u!114 &5977424246048677235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144378344177702611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6358a1b354b0d224c86b079ce6671576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
