@@ -17,8 +17,11 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     public GameObject Tint;
 
+    public Move TM;
+
     void Start()
     {
+        TM = GameObject.Find("Mimic").GetComponent<Move>();
         Instruction.SetActive(false);
 
         cam1.SetActive(true);
@@ -57,6 +60,9 @@ public class PeepHoleCameraChange : MonoBehaviour
                 cam1.SetActive(false);
                 cam2.SetActive(true);
                 Tint.SetActive(true);
+
+                TM.PeepHole = true;
+                TM.RunningRemaining = TM.RunningTime;
             }
         }
 
