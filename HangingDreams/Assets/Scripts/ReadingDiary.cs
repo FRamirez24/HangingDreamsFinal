@@ -25,7 +25,7 @@ public class ReadingDiary : MonoBehaviour
 
     public void NextPage()
     {
-
+        print("next page");
         if (i < Pages.Length)
         {
 
@@ -34,25 +34,26 @@ public class ReadingDiary : MonoBehaviour
             i++;
 
             Pages[i].SetActive(true);
-
+            print(i);
         }
 
     }
 
     public void PreviousPage()
     {
+        print("next page");
 
-    
-       
 
-            Pages[i].SetActive(false);
 
-            i--;
 
-            Pages[i - 1].SetActive(true);
+        Pages[i].SetActive(false);
 
-        
+        i--;
 
+        Pages[i - 1].SetActive(true);
+
+
+        print(i);
     }
 
 

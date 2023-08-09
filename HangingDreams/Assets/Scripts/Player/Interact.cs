@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 interface IInteractable
 {
@@ -15,7 +16,7 @@ public class Interact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -33,16 +34,6 @@ public class Interact : MonoBehaviour
                     interactObj.Interact();
 
                 }
-            }
-        }
-
-        Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-        if (Physics.Raycast(r, out RaycastHit hitInfo, InteractorRange))
-        {
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-            {
-                
-
             }
         }
     }
