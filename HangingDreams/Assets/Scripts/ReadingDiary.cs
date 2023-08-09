@@ -34,7 +34,7 @@ public class ReadingDiary : MonoBehaviour
             i++;
 
             Pages[i].SetActive(true);
-
+            print(i);
         }
 
     }
@@ -52,8 +52,8 @@ public class ReadingDiary : MonoBehaviour
 
         Pages[i - 1].SetActive(true);
 
-        
 
+        print(i);
     }
 
 
