@@ -16,7 +16,6 @@ public class BedCameraChange : MonoBehaviour
 
     public MeshRenderer player;
 
-
     void Start()
     {
        
@@ -55,11 +54,12 @@ public class BedCameraChange : MonoBehaviour
             {
                 player.enabled = false;
                 Instruction.SetActive(false);
-                ThisTrigger.SetActive(false);
                 Action = false;
-                cam1.SetActive(false);
                 cam2.SetActive(true);
-
+                cam1.SetActive(false);
+                
+                
+               
             }
         }
 

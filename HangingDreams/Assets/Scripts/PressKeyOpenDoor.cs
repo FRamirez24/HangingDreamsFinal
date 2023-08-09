@@ -40,12 +40,12 @@ public class PressKeyOpenDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Action == true && Open == false)
+            if (Action == true)
             {
                 Instruction.SetActive(false);
                 AnimeObjectOpen.GetComponent<Animator>().Play("DoorOpen");
                
-                Open = true;
+                
                 //DoorOpenSound.Play();
             } 
         }
