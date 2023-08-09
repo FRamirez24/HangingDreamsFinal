@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 226b80a3553f9e64697042616507018f
+=======
+guid: bac04cceb13d99b4f9dcd8df02265e1d
+>>>>>>> Stashed changes
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
