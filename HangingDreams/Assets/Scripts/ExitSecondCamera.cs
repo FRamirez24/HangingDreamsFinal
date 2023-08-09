@@ -23,13 +23,25 @@ public class ExitSecondCamera : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
 
+            StartCoroutine(holdPlayer());
+
+        }
+
+    }
+
+    IEnumerator holdPlayer()
+    {
+
+
+            yield return new WaitForSeconds(3);
+
             cam2.SetActive(false);
 
             cam1.SetActive(true);
 
             Tint.SetActive(false);
 
-        }
+        
 
     }
 }
