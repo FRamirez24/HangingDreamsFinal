@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeMaterial : MonoBehaviour
 {
@@ -48,6 +49,20 @@ public class ChangeMaterial : MonoBehaviour
         print("work lol");
         if (x < 20)
         {
+            
+            if (x == 12)
+            {
+
+                StartCoroutine(momDead());
+
+                if (Phc.Peeked = true)
+                {
+
+                    x++;
+
+                }
+
+            }
             if (x == 17)
             {
 
@@ -60,12 +75,17 @@ public class ChangeMaterial : MonoBehaviour
                 StartCoroutine(loopShout());
 
             }
+            if (x == 20)
+            {
+
+                SceneManager.LoadScene(3);
+
+            }
             else {  
 
                 x++;
             }
         }
-
         else
         {
             x = 20;
@@ -83,6 +103,8 @@ public class ChangeMaterial : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         audioSource.PlayOneShot(KnockonDoor);
+        Phc.completed = true;
+
     }
 
     IEnumerator monsterScream()
@@ -122,30 +144,6 @@ public class ChangeMaterial : MonoBehaviour
     }
 
 
-    //if (x == 2)
-    // {
-
-    // p4.pageReached();
-
-    // if (p4.Page4Found = true)
-    // {
-
-    //   x++;
-
-    // }
-
-    // }else if (x == 12)
-    //  {
-
-    //  StartCoroutine(momDead());
-
-    //  if (Phc.Peeked = true)
-    //  {
-
-    //     x++;
-
-    // }
-
-    //  }
+    
 
 }

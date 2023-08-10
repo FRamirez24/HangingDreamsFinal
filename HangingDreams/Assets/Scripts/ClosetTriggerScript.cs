@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeepHoleCameraChange : MonoBehaviour
+public class ClosetTriggerScript : MonoBehaviour
 {
-
     public GameObject cam1;
 
     public GameObject cam2;
+
+    public MeshRenderer player;
+
+    public GameObject instruction;
+
+    public ExitCloset EC;
+
+    public bool play = false;
 
     public GameObject Instruction;
 
@@ -15,15 +22,13 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     public bool Action = false;
 
-    public Move TM;
+    public bool Open = false;
 
-    public bool completed = false;
 
-    public bool Peeked = false;
 
     void Start()
     {
-        TM = GameObject.Find("Mimic").GetComponent<Move>();
+        EC = GameObject.Find("play").GetComponent<ExitCloset>();
 
         Instruction.SetActive(false);
 
@@ -35,7 +40,7 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.tag == "Player" && completed == true)
+        if (collision.transform.tag == "Player")
         {
             Instruction.SetActive(true);
             Action = true;
@@ -55,17 +60,11 @@ public class PeepHoleCameraChange : MonoBehaviour
         {
             if (Action == true)
             {
-                Instruction.SetActive(false);
-                ThisTrigger.SetActive(false);
-                Action = false;
-                cam1.SetActive(false);
+                player.enabled = false;
                 cam2.SetActive(true);
-                Peeked = true;
+                cam1.SetActive(false);
+                EC.SoundPlayer2D.Play();
 
-                TM.PeepHole = true;
-                TM.RunningRemaining = TM.RunningTime;
-                TM.audioSource.PlayOneShot(TM.Jumpscare);
-                TM.audioSource.PlayOneShot(TM.run);
             }
         }
 
