@@ -58,7 +58,7 @@ public class Page4Trigger : MonoBehaviour
 
     }
 
-    public void pageReached()
+    public void PageReached()
     {
 
         page4.enabled = true;

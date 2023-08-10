@@ -10,9 +10,11 @@ public class ChangeMaterial : MonoBehaviour
     public float timeDelay = 0f;
     public AudioClip SwitchPage;
     public AudioClip KnockonDoor;
+    public AudioClip MonsterShout;
     private AudioSource audioSource;
     public Page4Trigger p4;
     public PeepHoleCameraChange Phc;
+    public GameObject monsterWarning;
 
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class ChangeMaterial : MonoBehaviour
         rend.sharedMaterial = material[x];
         rend.enabled = true;
         audioSource = GetComponent<AudioSource>();
+        monsterWarning.SetActive(false);
         
         
     }
@@ -45,20 +48,19 @@ public class ChangeMaterial : MonoBehaviour
         print("work lol");
         if (x < 20)
         {
-            if (x == 12)
+            if (x == 17)
             {
 
-                StartCoroutine(momDead());
+                StartCoroutine(monsterScream());
 
-                if (Phc.Peeked = true)
-                {
+                StartCoroutine(monsterText());
 
-                    x++;
+                StartCoroutine(monsterAttack());
 
-                }
+                StartCoroutine(loopShout());
 
             }
-            else {
+            else {  
 
                 x++;
             }
@@ -83,19 +85,67 @@ public class ChangeMaterial : MonoBehaviour
         audioSource.PlayOneShot(KnockonDoor);
     }
 
+    IEnumerator monsterScream()
+    {
+        yield return new WaitForSeconds(3);
+        monsterWarning.SetActive(true);
+        audioSource.PlayOneShot(MonsterShout);
+    }
+
+    IEnumerator monsterText()
+    {
+
+            yield return new WaitForSeconds(6);
+            monsterWarning.SetActive(false);
+        
+    }
+
+    IEnumerator monsterAttack()
+    {
+        
+            yield return new WaitForSeconds(3);
+            x++;
+        
+    }
+
+    IEnumerator loopShout()
+    {
+
+        yield return new WaitForSeconds(6);
+        for(int i = 0; i < 10; i++)
+        {
+
+            audioSource.PlayOneShot(MonsterShout);
+
+        }
+
+    }
+
 
     //if (x == 2)
-           // {
+    // {
 
-               // p4.pageReached();
+    // p4.pageReached();
 
-               // if (p4.Page4Found = true)
-               // {
+    // if (p4.Page4Found = true)
+    // {
 
-                 //   x++;
+    //   x++;
 
-               // }
+    // }
 
-           // }else
+    // }else if (x == 12)
+    //  {
+
+    //  StartCoroutine(momDead());
+
+    //  if (Phc.Peeked = true)
+    //  {
+
+    //     x++;
+
+    // }
+
+    //  }
 
 }
