@@ -8,6 +8,8 @@ public class ChangeMaterial : MonoBehaviour
     public int x;
     Renderer rend;
     public float timeDelay = 0f;
+    public AudioClip SwitchPage;
+    private AudioSource audioSource;
 
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class ChangeMaterial : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.sharedMaterial = material[x];
         rend.enabled = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,6 +53,7 @@ public class ChangeMaterial : MonoBehaviour
     IEnumerator timer(float timerthing)
     {
         yield return new WaitForSeconds(timerthing);
+        audioSource.PlayOneShot(SwitchPage);
         NextColor();
     }
 
