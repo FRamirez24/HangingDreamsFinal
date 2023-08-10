@@ -8,14 +8,18 @@ public class PressKeyOpenDoor : MonoBehaviour
     public GameObject Instruction;
     public GameObject AnimeObjectOpen;
     public GameObject ThisTrigger;
-    public AudioSource DoorOpenSound;
+    public AudioClip DoorOpenSound;
     public bool Action = false;
     public bool Open = false;
     public GameObject AnimeObjectClose;
+    public AudioClip DoorCloseSound;
+    private AudioSource audioSource;
 
     void Start()
     {
         Instruction.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void OnTriggerEnter(Collider collision)
@@ -44,11 +48,20 @@ public class PressKeyOpenDoor : MonoBehaviour
             {
                 Instruction.SetActive(false);
                 AnimeObjectOpen.GetComponent<Animator>().Play("DoorOpen");
-               
-                
-                //DoorOpenSound.Play();
+                audioSource.PlayOneShot(DoorOpenSound);
+                StartCoroutine(DoorClose());
             } 
         }
+
+    }
+
+    IEnumerator DoorClose()
+    {
+
+
+        yield return new WaitForSeconds(4);
+
+        audioSource.PlayOneShot(DoorCloseSound);
 
     }
 }
