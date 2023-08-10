@@ -11,6 +11,15 @@ public class PlayerMovement : MonoBehaviour
 
     public bool doWalkAround = true;
 
+    private FootstepController footstepController;
+
+    void Start()
+    {
+
+        footstepController = GetComponentInChildren<FootstepController>();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +30,23 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 move = transform.right * x + transform.forward * z;
             controller.Move(move * Time.deltaTime * speed);
+
+
+
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            {
+                footstepController.StartWalking();
+            }
+            else
+            {
+
+                footstepController.StopWalking();
+
+            }
         }
+
     }
 }
+        
+
+        

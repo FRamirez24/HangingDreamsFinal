@@ -25,7 +25,7 @@ public class BedCameraChange : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        print("lol");
+
         player.enabled = false;
         cam2.SetActive(true);
         cam1.SetActive(false);
