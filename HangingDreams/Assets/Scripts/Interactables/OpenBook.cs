@@ -7,7 +7,6 @@ public class OpenBook : MonoBehaviour, IInteractable
 {
     public LookAround lookaroundscript;
     public PlayerMovement movePlayer;
-    public GameObject readingScreen;
     public Transform cam;
     public float offset = 3f;
     public Animator anim;
@@ -30,7 +29,7 @@ public class OpenBook : MonoBehaviour, IInteractable
         Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
 
         cam.position = newPosition;
-        cam.rotation = Quaternion.Euler(90f, transform.rotation.y, transform.rotation.z);
+        cam.rotation = Quaternion.Euler(80.926f, 27.4f, transform.rotation.z);
 
         lookaroundscript.doMoveCamera = false;
 
@@ -49,7 +48,6 @@ public class OpenBook : MonoBehaviour, IInteractable
 
         if(isInBook == true && Input.GetButtonDown("Cancel"))
         {
-            readingScreen.SetActive(false) ;
             lookaroundscript.doMoveCamera = true;
             Cursor.lockState = CursorLockMode.Locked;
             movePlayer.doWalkAround = true;
