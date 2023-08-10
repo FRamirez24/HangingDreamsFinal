@@ -10,9 +10,23 @@ public class ExitBedCamera : MonoBehaviour
 
     public MeshRenderer player;
 
+    public AudioSource SoundPlayer2D;
+
+    public AudioClip sound;
+
+    private AudioSource audioSource;
+
+    public bool play = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        cam2.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
+
+        SoundPlayer2D.clip = sound;
 
     }
 
@@ -29,8 +43,9 @@ public class ExitBedCamera : MonoBehaviour
 
             cam1.SetActive(true);
 
+            SoundPlayer2D.Stop();
 
         }
 
-    }
+    } 
 }

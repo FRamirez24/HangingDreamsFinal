@@ -19,7 +19,7 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     void Start()
     {
-        TM = GameObject.Find("Mimic").GetComponent<Move>();
+        //TM = GameObject.Find("Mimic").GetComponent<Move>();
 
         Instruction.SetActive(false);
 
