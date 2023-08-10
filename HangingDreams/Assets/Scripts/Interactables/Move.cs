@@ -16,10 +16,15 @@ namespace MimicSpace
         public float velocityLerpCoef = 4f;
         Mimic myMimic;
         public bool PeepHole = false;
+        public AudioClip run;
+        public AudioClip Jumpscare;
+        private AudioSource audioSource;
+
 
         private void Start()
         {
             myMimic = GetComponent<Mimic>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -38,7 +43,23 @@ namespace MimicSpace
             if (PeepHole == true)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+                audioSource.PlayOneShot(run);
+
+                StartCoroutine(jumpscare());
+
             }
+
+
+        }
+
+        IEnumerator jumpscare()
+        {
+
+
+            yield return new WaitForSeconds(4);
+
+            audioSource.PlayOneShot(Jumpscare);
 
         }
     }

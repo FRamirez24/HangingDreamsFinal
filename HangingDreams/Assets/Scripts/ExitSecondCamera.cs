@@ -20,20 +20,20 @@ public class ExitSecondCamera : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
+        StartCoroutine(holdPlayer());
 
-            StartCoroutine(holdPlayer());
-
-        }
+        
 
     }
 
     IEnumerator holdPlayer()
     {
 
+            yield return new WaitForSeconds(4);
 
-            yield return new WaitForSeconds(3);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
 
             cam2.SetActive(false);
 
@@ -41,7 +41,6 @@ public class ExitSecondCamera : MonoBehaviour
 
             Tint.SetActive(false);
 
-        
-
+        }
     }
 }
