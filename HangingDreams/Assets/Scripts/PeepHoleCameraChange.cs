@@ -15,8 +15,6 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     public bool Action = false;
 
-    public GameObject Tint;
-
     //public Move TM;
 
     void Start()
@@ -28,8 +26,6 @@ public class PeepHoleCameraChange : MonoBehaviour
         cam1.SetActive(true);
 
         cam2.SetActive(false);
-
-        Tint.SetActive(false);
 
     }
 
@@ -60,7 +56,6 @@ public class PeepHoleCameraChange : MonoBehaviour
                 Action = false;
                 cam1.SetActive(false);
                 cam2.SetActive(true);
-                Tint.SetActive(true);
 
                 //TM.PeepHole = true;
                 //TM.RunningRemaining = TM.RunningTime;
