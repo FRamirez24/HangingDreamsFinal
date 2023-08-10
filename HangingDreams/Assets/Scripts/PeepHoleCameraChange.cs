@@ -59,6 +59,7 @@ public class PeepHoleCameraChange : MonoBehaviour
 
                 TM.PeepHole = true;
                 TM.RunningRemaining = TM.RunningTime;
+                TM.audioSource.PlayOneShot(TM.Jumpscare);
                 TM.audioSource.PlayOneShot(TM.run);
             }
         }

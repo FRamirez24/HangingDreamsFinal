@@ -59,7 +59,7 @@ public class Move : MonoBehaviour
     {
 
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
 
         audioSource.PlayOneShot(Jumpscare);
 
