@@ -1920,6 +1920,8 @@ MonoBehaviour:
   readingScreen: {fileID: 890611210}
   cam: {fileID: 1519549547}
   offset: 1
+  anim: {fileID: 0}
+  isInBook: 0
 --- !u!1 &1066141293
 GameObject:
   m_ObjectHideFlags: 0
