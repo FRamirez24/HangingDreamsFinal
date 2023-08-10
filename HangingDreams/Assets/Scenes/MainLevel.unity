@@ -2926,9 +2926,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam1: {fileID: 1533895716}
   cam2: {fileID: 241045394}
-  Instruction: {fileID: 688798807}
-  ThisTrigger: {fileID: 1422865610}
-  Action: 0
   player: {fileID: 1400161806}
 --- !u!65 &1422865613
 BoxCollider:
