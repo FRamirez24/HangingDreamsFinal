@@ -44,12 +44,6 @@ public class Page4Trigger : MonoBehaviour
 
     void Update()
     {
-        if(pageReached = true)
-        {
-
-            page4.enabled = true;
-
-        }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -63,6 +57,14 @@ public class Page4Trigger : MonoBehaviour
         }
 
     }
+
+    public void pageReached()
+    {
+
+        page4.enabled = true;
+
+    }
+
 
     
 }
