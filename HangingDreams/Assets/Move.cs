@@ -16,11 +16,16 @@ public class Move : MonoBehaviour
     public bool PeepHole = false;
     public float RunningTime = 0.75f;
     public float RunningRemaining = 0;
+    public AudioClip run;
+    public AudioClip Jumpscare;
+    public AudioSource audioSource;
 
 
     private void Start()
     {
         myMimic = GetComponent<Mimic>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,8 +46,22 @@ public class Move : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             RunningRemaining -= Time.deltaTime;
 
+            
+
+            StartCoroutine(jumpscare());
+
         }
 
+
+    }
+
+    IEnumerator jumpscare()
+    {
+
+
+        yield return new WaitForSeconds(4);
+
+        audioSource.PlayOneShot(Jumpscare);
 
     }
 }
