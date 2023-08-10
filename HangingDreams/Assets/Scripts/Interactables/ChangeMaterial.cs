@@ -5,11 +5,14 @@ using UnityEngine;
 public class ChangeMaterial : MonoBehaviour
 {
     public Material[] material;
-    public int x;
+    public int x = 0;
     Renderer rend;
     public float timeDelay = 0f;
     public AudioClip SwitchPage;
+    public AudioClip KnockonDoor;
     private AudioSource audioSource;
+    public Page4Trigger p4;
+    public PeepHoleCameraChange Phc;
 
 
     // Start is called before the first frame update
@@ -20,6 +23,8 @@ public class ChangeMaterial : MonoBehaviour
         rend.sharedMaterial = material[x];
         rend.enabled = true;
         audioSource = GetComponent<AudioSource>();
+        
+        
     }
 
     // Update is called once per frame
@@ -40,8 +45,23 @@ public class ChangeMaterial : MonoBehaviour
         print("work lol");
         if (x < 20)
         {
+            if (x == 12)
+            {
 
-            x++;
+                StartCoroutine(momDead());
+
+                if (Phc.Peeked = true)
+                {
+
+                    x++;
+
+                }
+
+            }
+            else {
+
+                x++;
+            }
         }
 
         else
@@ -56,5 +76,26 @@ public class ChangeMaterial : MonoBehaviour
         audioSource.PlayOneShot(SwitchPage);
         NextColor();
     }
+
+    IEnumerator momDead()
+    {
+        yield return new WaitForSeconds(3);
+        audioSource.PlayOneShot(KnockonDoor);
+    }
+
+
+    //if (x == 2)
+           // {
+
+               // p4.pageReached();
+
+               // if (p4.Page4Found = true)
+               // {
+
+                 //   x++;
+
+               // }
+
+           // }else
 
 }

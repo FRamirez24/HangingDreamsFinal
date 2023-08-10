@@ -17,6 +17,8 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     public Move TM;
 
+    public bool Peeked = false;
+
     void Start()
     {
         //TM = GameObject.Find("Mimic").GetComponent<Move>();
@@ -56,6 +58,7 @@ public class PeepHoleCameraChange : MonoBehaviour
                 Action = false;
                 cam1.SetActive(false);
                 cam2.SetActive(true);
+                Peeked = true;
 
                 TM.PeepHole = true;
                 TM.RunningRemaining = TM.RunningTime;
