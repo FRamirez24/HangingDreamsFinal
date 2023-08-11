@@ -21,6 +21,8 @@ public class PeepHoleCameraChange : MonoBehaviour
 
     public bool Peeked = false;
 
+    public OpenBook book;
+
     void Start()
     {
         TM = GameObject.Find("Mimic").GetComponent<Move>();
@@ -61,6 +63,7 @@ public class PeepHoleCameraChange : MonoBehaviour
                 cam1.SetActive(false);
                 cam2.SetActive(true);
                 Peeked = true;
+                book.canChangePage = true;
 
                 TM.PeepHole = true;
                 TM.RunningRemaining = TM.RunningTime;

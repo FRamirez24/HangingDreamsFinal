@@ -24,6 +24,7 @@ public class Move2 : MonoBehaviour
 
 
 
+
     private void Start()
     {
         myMimic = GetComponent<Mimic>();

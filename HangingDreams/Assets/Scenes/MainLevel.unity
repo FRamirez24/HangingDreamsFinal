@@ -1534,6 +1534,7 @@ MonoBehaviour:
   TM: {fileID: 693455937}
   completed: 0
   Peeked: 0
+  book: {fileID: 1126868533}
 --- !u!65 &424838505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3553,6 +3554,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1126868533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7701739524821407105, guid: 6c1c767eeed723b458ba473a5bc0d362,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847253941}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126868527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a89a2f33467b4fb0bb9c50d25a279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1131525984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4898,6 +4911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f251e42540dfe4ea269339cdbc24f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 1126868533}
   Instruction: {fileID: 1189580723}
   ThisTrigger: {fileID: 1559719712}
   GrabPage: {fileID: 8300000, guid: 54d706ecf5c5987478b004cf796bf917, type: 3}
@@ -5949,6 +5963,11 @@ PrefabInstance:
       propertyPath: Phc
       value: 
       objectReference: {fileID: 424838504}
+    - target: {fileID: 7701739524619594811, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: book
+      value: 
+      objectReference: {fileID: 1126868533}
     - target: {fileID: 7701739524619594811, guid: 6c1c767eeed723b458ba473a5bc0d362,
         type: 3}
       propertyPath: SwitchPage

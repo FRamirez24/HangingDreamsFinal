@@ -44,7 +44,6 @@ public class OpenBook : MonoBehaviour, IInteractable
         {
             anim.SetTrigger("FlipPage");
             print("kill me");
-            canChangePage = false;
             
         }
 

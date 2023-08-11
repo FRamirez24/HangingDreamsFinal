@@ -18,6 +18,7 @@ public class ChangeMaterial : MonoBehaviour
     public GameObject monsterWarning;
     public Move2 m2;
     public OpenBook book;
+    public GameObject findPage;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class ChangeMaterial : MonoBehaviour
         rend.enabled = true;
         audioSource = GetComponent<AudioSource>();
         monsterWarning.SetActive(false);
+        findPage.SetActive(false);
         
         
     }
@@ -50,11 +52,13 @@ public class ChangeMaterial : MonoBehaviour
         print("x: " + x);
         if (x < 20)
         {
-            if (x == 2)
+            if (x == 1)
             {
                
                     print("page reached");
-                    p4.PageReached();
+                    findPage.SetActive(true);
+                StartCoroutine(FindPageTimer());
+                p4.PageReached();
                     book.canChangePage = false;
 
                 if (p4.Page4Found = true)
@@ -64,21 +68,24 @@ public class ChangeMaterial : MonoBehaviour
 
                 }
             }
-            if (x == 12)
+            else if (x == 11)
             {
 
                 StartCoroutine(momDead());
+
+                book.canChangePage = false;
 
                 if (Phc.Peeked = true)
                 {
 
                     x++;
-                    book.canChangePage = false;
+                    
                 }
 
             }
-            if (x == 17)
+            else if (x == 16)
             {
+                
 
                 StartCoroutine(monsterScream());
 
@@ -88,15 +95,17 @@ public class ChangeMaterial : MonoBehaviour
 
                 x++;
 
-                book.canChangePage = false;
+                
             }
-            if (x == 20)
+            else if (x == 20)
             {
 
                 SceneManager.LoadScene(3);
+
                 book.canChangePage = false;
+
             }
-            else
+            else 
             {
                 x++;
             }
@@ -110,7 +119,7 @@ public class ChangeMaterial : MonoBehaviour
         IEnumerator timer(float timerthing)
         {
             yield return new WaitForSeconds(timerthing);
-            //audioSource.PlayOneShot(SwitchPage);
+            audioSource.PlayOneShot(SwitchPage);
             NextColor();
         }
 
@@ -138,7 +147,15 @@ public class ChangeMaterial : MonoBehaviour
 
         }
 
-        IEnumerator loopShout()
+    IEnumerator FindPageTimer()
+    {
+
+        yield return new WaitForSeconds(6);
+        findPage.SetActive(false);
+
+    }
+
+    IEnumerator loopShout()
         {
 
             yield return new WaitForSeconds(6);

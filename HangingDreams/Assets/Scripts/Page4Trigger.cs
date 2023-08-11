@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Page4Trigger : MonoBehaviour, IInteractable
+public class Page4Trigger : MonoBehaviour
 {
+    public OpenBook book;
     public GameObject Instruction;
     public GameObject ThisTrigger;
     public AudioClip GrabPage;
@@ -12,6 +13,7 @@ public class Page4Trigger : MonoBehaviour, IInteractable
     public bool Page4Found = false;
     public bool pageReached = false;
     private AudioSource audioSource;
+
 
 
     void Start()
@@ -44,12 +46,21 @@ public class Page4Trigger : MonoBehaviour, IInteractable
     }
 
 
-    public void Interact()
+
+    void Update()
     {
-        Instruction.SetActive(false);
-        audioSource.PlayOneShot(GrabPage);
-        page4.enabled = false;
-        Page4Found = true;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Action == true)
+            {
+                Instruction.SetActive(false);
+                audioSource.PlayOneShot(GrabPage);
+                page4.enabled = false;
+                Page4Found = true;
+                book.canChangePage = true;
+
+            }
+        }
     }
 
     public void PageReached()
@@ -58,7 +69,8 @@ public class Page4Trigger : MonoBehaviour, IInteractable
         page4.enabled = true;
 
     }
+}
 
     
     
-}
+
