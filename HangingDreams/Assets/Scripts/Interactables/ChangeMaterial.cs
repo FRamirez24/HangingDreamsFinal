@@ -16,7 +16,7 @@ public class ChangeMaterial : MonoBehaviour
     public Page4Trigger p4;
     public PeepHoleCameraChange Phc;
     public GameObject monsterWarning;
-
+    public Move2 m2;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,32 @@ public class ChangeMaterial : MonoBehaviour
         print("x: " + x);
         if (x < 20)
         {
-            
+            if (x == 2)
+            {
+               
+                    print("page reached");
+                    p4.PageReached();
+
+                if (p4.Page4Found = true)
+                {
+
+                    x++;
+
+                }
+            }
+            if (x == 12)
+            {
+
+                StartCoroutine(momDead());
+
+                if (Phc.Peeked = true)
+                {
+
+                    x++;
+
+                }
+
+            }
             if (x == 17)
             {
 
@@ -57,9 +82,9 @@ public class ChangeMaterial : MonoBehaviour
 
                 StartCoroutine(monsterText());
 
-                StartCoroutine(monsterAttack());
-
                 StartCoroutine(loopShout());
+
+                x++;
 
             }
             if (x == 20)
@@ -70,7 +95,6 @@ public class ChangeMaterial : MonoBehaviour
             }
             else
             {
-
                 x++;
             }
         }
@@ -100,6 +124,7 @@ public class ChangeMaterial : MonoBehaviour
             yield return new WaitForSeconds(3);
             monsterWarning.SetActive(true);
             audioSource.PlayOneShot(MonsterShout);
+            m2.attack();
         }
 
         IEnumerator monsterText()
@@ -107,14 +132,6 @@ public class ChangeMaterial : MonoBehaviour
 
             yield return new WaitForSeconds(6);
             monsterWarning.SetActive(false);
-
-        }
-
-        IEnumerator monsterAttack()
-        {
-
-            yield return new WaitForSeconds(3);
-            x++;
 
         }
 
