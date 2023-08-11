@@ -13,6 +13,7 @@ public class OpenBook : MonoBehaviour, IInteractable
     public bool isInBook = false;
     private Vector3 oldPosition;
     private Quaternion oldRotation;
+    public bool canChangePage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +40,11 @@ public class OpenBook : MonoBehaviour, IInteractable
     }
     void Update()
     {
-        if(isInBook == true && Input.GetKeyDown(KeyCode.RightArrow))
+        if(isInBook == true && Input.GetKeyDown(KeyCode.RightArrow) && canChangePage == true)
         {
             anim.SetTrigger("FlipPage");
             print("kill me");
+            canChangePage = false;
             
         }
 
@@ -56,5 +58,11 @@ public class OpenBook : MonoBehaviour, IInteractable
             cam.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
         }
 
+    }
+
+    public IEnumerator flipPageTimer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canChangePage = true;
     }
 }
