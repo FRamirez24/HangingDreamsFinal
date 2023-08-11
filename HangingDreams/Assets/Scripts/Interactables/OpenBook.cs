@@ -29,7 +29,7 @@ public class OpenBook : MonoBehaviour, IInteractable
         Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
 
         cam.position = newPosition;
-        cam.rotation = Quaternion.Euler(80.926f, 27.4f, transform.rotation.z);
+        cam.rotation = Quaternion.Euler(80.926f, -7.68f, 0);
 
         lookaroundscript.doMoveCamera = false;
 

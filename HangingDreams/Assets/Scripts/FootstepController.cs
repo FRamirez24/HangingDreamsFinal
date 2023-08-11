@@ -5,8 +5,8 @@ using UnityEngine;
 public class FootstepController : MonoBehaviour
 {
     public AudioClip[] footstepSounds; // Array to hold footstep sound clips
-    public float minTimeBetweenFootsteps = 0.3f; // Minimum time between footstep sounds
-    public float maxTimeBetweenFootsteps = 0.6f; // Maximum time between footstep sounds
+    public float minTimeBetweenFootsteps = 1f; // Minimum time between footstep sounds
+    public float maxTimeBetweenFootsteps = 1.3f; // Maximum time between footstep sounds
 
     private AudioSource audioSource; // Reference to the Audio Source component
     private bool isWalking = false; // Flag to track if the player is walking
@@ -26,8 +26,8 @@ public class FootstepController : MonoBehaviour
             if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenFootsteps, maxTimeBetweenFootsteps))
             {
                 // Play a random footstep sound from the array
-                //AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];
-                //audioSource.PlayOneShot(footstepSound);
+                AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];
+                audioSource.PlayOneShot(footstepSound);
 
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound
             }

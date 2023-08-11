@@ -49,7 +49,7 @@ public class ChangeMaterial : MonoBehaviour
         print("work lol");
         if (x < 20)
         {
-            
+           
             if (x == 12)
             {
 
