@@ -58,12 +58,12 @@ public class ChangeMaterial : MonoBehaviour
         {
             if (x == 1)
             {
-               
-                    print("page reached");
-                    findPage.SetActive(true);
+
+                print("page reached");
+                findPage.SetActive(true);
                 StartCoroutine(FindPageTimer());
                 p4.PageReached();
-                    book.canChangePage = false;
+                book.canChangePage = false;
 
                 if (p4.Page4Found = true)
                 {
@@ -83,13 +83,13 @@ public class ChangeMaterial : MonoBehaviour
                 {
 
                     x++;
-                    
+
                 }
 
             }
             else if (x == 16)
             {
-                
+
 
                 StartCoroutine(monsterScream());
 
@@ -99,14 +99,6 @@ public class ChangeMaterial : MonoBehaviour
 
                 x++;
 
-                
-            }
-            else if (x == 20)
-            {
-
-                SceneManager.LoadScene(3);
-
-                book.canChangePage = false;
 
             }
             else 
@@ -119,6 +111,10 @@ public class ChangeMaterial : MonoBehaviour
         {
             x = 20;
             book.canChangePage = false;
+
+            SceneManager.LoadScene(3);
+
+              
         }
     }
         IEnumerator timer(float timerthing)
