@@ -9,7 +9,7 @@ public class Page4Trigger : MonoBehaviour
     public AudioClip GrabPage;
     public bool Action = false;
     public MeshRenderer page4;
-    public bool Page4Found;
+    public bool Page4Found = false;
     public bool pageReached = false;
     private AudioSource audioSource;
 
@@ -19,6 +19,8 @@ public class Page4Trigger : MonoBehaviour
         Instruction.SetActive(false);
 
         page4.enabled = false;
+
+        Page4Found = false;
 
         audioSource = GetComponent<AudioSource>();
 

@@ -22,6 +22,8 @@ public class Move2 : MonoBehaviour
     public bool event3 = false;
 
 
+
+
     private void Start()
     {
         myMimic = GetComponent<Mimic>();
@@ -43,13 +45,17 @@ public class Move2 : MonoBehaviour
             destHeight = new Vector3(transform.position.x, hit.point.y + height, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, destHeight, velocityLerpCoef * Time.deltaTime);
         
-        if(event3 == true)
-        {
+        
 
-            //transform.Translate(36.41f, 0.37f, 13.94f);
 
-        }
+    }
 
+    public void attack()
+    {
+
+        transform.position = new Vector3(36.41f, 0.37f, 13.942f);
+
+        StartCoroutine(goBack());
 
     }
 
@@ -60,6 +66,15 @@ public class Move2 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         audioSource.PlayOneShot(Jumpscare);
+
+    }
+
+    IEnumerator goBack()
+    {
+
+        yield return new WaitForSeconds(3);
+
+        transform.position = new Vector3(36.02f, 0.69f, 33.36f);
 
     }
 }
