@@ -19,6 +19,8 @@ public class ChangeMaterial : MonoBehaviour
     public Move2 m2;
     public OpenBook book;
     public GameObject findPage;
+    public SkinnedMeshRenderer Page;
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,8 @@ public class ChangeMaterial : MonoBehaviour
         rend.sharedMaterial = material[x];
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            Page.GetComponent<Renderer>().enabled = true;
+
             StartCoroutine(timer(timeDelay));
         }
     }
@@ -108,6 +112,7 @@ public class ChangeMaterial : MonoBehaviour
             else 
             {
                 x++;
+
             }
         }
         else
@@ -121,9 +126,11 @@ public class ChangeMaterial : MonoBehaviour
             yield return new WaitForSeconds(timerthing);
             audioSource.PlayOneShot(SwitchPage);
             NextColor();
-        }
+        Page.GetComponent<Renderer>().enabled = false;
 
-        IEnumerator momDead()
+    }
+
+    IEnumerator momDead()
         {
             yield return new WaitForSeconds(3);
             audioSource.PlayOneShot(KnockonDoor);
