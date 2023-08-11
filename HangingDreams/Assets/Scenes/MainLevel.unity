@@ -2199,7 +2199,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3896410163471152793, guid: bc244e0e244c28e44bb955df5bdbddb5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc244e0e244c28e44bb955df5bdbddb5, type: 3}
 --- !u!1 &666078814
 GameObject:
@@ -5933,6 +5934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: The Journal
       objectReference: {fileID: 0}
+    - target: {fileID: 7701739524619594811, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: m2
+      value: 
+      objectReference: {fileID: 1470612880}
     - target: {fileID: 7701739524619594811, guid: 6c1c767eeed723b458ba473a5bc0d362,
         type: 3}
       propertyPath: p4
