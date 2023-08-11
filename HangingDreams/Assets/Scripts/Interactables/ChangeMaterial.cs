@@ -49,19 +49,7 @@ public class ChangeMaterial : MonoBehaviour
         print("work lol");
         if (x < 20)
         {
-            if (x == 2)
-            {
-
-                p4.pageReached();
-
-                if (p4.Page4Found = true)
-                {
-
-                    x++;
-
-                }
-
-            }
+            
             if (x == 12)
             {
 
