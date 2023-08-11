@@ -16,15 +16,7 @@ public class ExitCloset : MonoBehaviour
 
     private AudioSource audioSource;
 
-    public bool play = false;
-
-    public GameObject Instruction;
-   
-    public GameObject ThisTrigger;
     
-    public bool Action = false;
-
-    public bool Open = false;
     
     
     

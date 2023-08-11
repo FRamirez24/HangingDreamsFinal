@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MimicSpace;
 
-public class Move : MonoBehaviour
+public class Move2 : MonoBehaviour
 {
     [Header("Controls")]
     [Tooltip("Body Height from ground")]
@@ -42,14 +42,11 @@ public class Move : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up * 5f, -Vector3.up, out hit))
             destHeight = new Vector3(transform.position.x, hit.point.y + height, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, destHeight, velocityLerpCoef * Time.deltaTime);
-       if (PeepHole == true && RunningRemaining > 0)
+        
+        if(event3 == true)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-            RunningRemaining -= Time.deltaTime;
 
-            
-
-            StartCoroutine(jumpscare());
+            //transform.Translate(36.41f, 0.37f, 13.94f);
 
         }
 

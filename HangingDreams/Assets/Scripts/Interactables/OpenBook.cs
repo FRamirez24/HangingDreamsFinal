@@ -22,7 +22,7 @@ public class OpenBook : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Vector3 oldPosition = cam.position;
+        Vector3 oldPosition = cam.localPosition;
         print(oldPosition);
         Quaternion oldRotation = cam.rotation;
         print(oldRotation);
@@ -52,7 +52,7 @@ public class OpenBook : MonoBehaviour, IInteractable
             Cursor.lockState = CursorLockMode.Locked;
             movePlayer.doWalkAround = true;
             isInBook = false;
-            cam.position = new Vector3(oldPosition.x, oldPosition.y, oldPosition.z);
+            cam.localPosition = new Vector3(0, 0.718f, 0);
             cam.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
         }
 

@@ -45,24 +45,11 @@ public class ChangeMaterial : MonoBehaviour
 
     public void NextColor()
     {
-        
-        print("work lol");
+
+        print("x: " + x);
         if (x < 20)
         {
             
-            if (x == 12)
-            {
-
-                StartCoroutine(momDead());
-
-                if (Phc.Peeked = true)
-                {
-
-                    x++;
-
-                }
-
-            }
             if (x == 17)
             {
 
@@ -81,7 +68,8 @@ public class ChangeMaterial : MonoBehaviour
                 SceneManager.LoadScene(3);
 
             }
-            else {  
+            else
+            {
 
                 x++;
             }
@@ -92,58 +80,56 @@ public class ChangeMaterial : MonoBehaviour
 
         }
     }
-    IEnumerator timer(float timerthing)
-    {
-        yield return new WaitForSeconds(timerthing);
-        audioSource.PlayOneShot(SwitchPage);
-        NextColor();
-    }
-
-    IEnumerator momDead()
-    {
-        yield return new WaitForSeconds(3);
-        audioSource.PlayOneShot(KnockonDoor);
-        Phc.completed = true;
-
-    }
-
-    IEnumerator monsterScream()
-    {
-        yield return new WaitForSeconds(3);
-        monsterWarning.SetActive(true);
-        audioSource.PlayOneShot(MonsterShout);
-    }
-
-    IEnumerator monsterText()
-    {
-
-            yield return new WaitForSeconds(6);
-            monsterWarning.SetActive(false);
-        
-    }
-
-    IEnumerator monsterAttack()
-    {
-        
-            yield return new WaitForSeconds(3);
-            x++;
-        
-    }
-
-    IEnumerator loopShout()
-    {
-
-        yield return new WaitForSeconds(6);
-        for(int i = 0; i < 10; i++)
+        IEnumerator timer(float timerthing)
         {
+            yield return new WaitForSeconds(timerthing);
+            audioSource.PlayOneShot(SwitchPage);
+            NextColor();
+        }
 
-            audioSource.PlayOneShot(MonsterShout);
+        IEnumerator momDead()
+        {
+            yield return new WaitForSeconds(3);
+            audioSource.PlayOneShot(KnockonDoor);
+            Phc.completed = true;
 
         }
 
+        IEnumerator monsterScream()
+        {
+            yield return new WaitForSeconds(3);
+            monsterWarning.SetActive(true);
+            audioSource.PlayOneShot(MonsterShout);
+        }
+
+        IEnumerator monsterText()
+        {
+
+            yield return new WaitForSeconds(6);
+            monsterWarning.SetActive(false);
+
+        }
+
+        IEnumerator monsterAttack()
+        {
+
+            yield return new WaitForSeconds(3);
+            x++;
+
+        }
+
+        IEnumerator loopShout()
+        {
+
+            yield return new WaitForSeconds(6);
+            for (int i = 0; i < 10; i++)
+            {
+
+                audioSource.PlayOneShot(MonsterShout);
+
+            }
+
+        }
+
+
     }
-
-
-    
-
-}

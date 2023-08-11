@@ -60,7 +60,7 @@ public class Page4Trigger : MonoBehaviour
 
     public void PageReached()
     {
-
+        print("Hello");
         page4.enabled = true;
 
     }
