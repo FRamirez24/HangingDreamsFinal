@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Page4Trigger : MonoBehaviour
+public class Page4Trigger : MonoBehaviour, IInteractable
 {
     public GameObject Instruction;
     public GameObject ThisTrigger;
@@ -44,20 +44,12 @@ public class Page4Trigger : MonoBehaviour
     }
 
 
-    void Update()
+    public void Interact()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Action == true)
-            {
-                Instruction.SetActive(false);
-                audioSource.PlayOneShot(GrabPage);
-                page4.enabled = false;
-                Page4Found = true;
-            }
-        }
-
+        Instruction.SetActive(false);
+        audioSource.PlayOneShot(GrabPage);
+        page4.enabled = false;
+        Page4Found = true;
     }
 
     public void PageReached()
@@ -67,6 +59,6 @@ public class Page4Trigger : MonoBehaviour
 
     }
 
-
+    
     
 }

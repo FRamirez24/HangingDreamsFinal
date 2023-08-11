@@ -17,6 +17,7 @@ public class ChangeMaterial : MonoBehaviour
     public PeepHoleCameraChange Phc;
     public GameObject monsterWarning;
     public Move2 m2;
+    public OpenBook book;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,7 @@ public class ChangeMaterial : MonoBehaviour
                
                     print("page reached");
                     p4.PageReached();
+                    book.canChangePage = false;
 
                 if (p4.Page4Found = true)
                 {
@@ -71,7 +73,7 @@ public class ChangeMaterial : MonoBehaviour
                 {
 
                     x++;
-
+                    book.canChangePage = false;
                 }
 
             }
@@ -86,12 +88,13 @@ public class ChangeMaterial : MonoBehaviour
 
                 x++;
 
+                book.canChangePage = false;
             }
             if (x == 20)
             {
 
                 SceneManager.LoadScene(3);
-
+                book.canChangePage = false;
             }
             else
             {
@@ -101,13 +104,13 @@ public class ChangeMaterial : MonoBehaviour
         else
         {
             x = 20;
-
+            book.canChangePage = false;
         }
     }
         IEnumerator timer(float timerthing)
         {
             yield return new WaitForSeconds(timerthing);
-            audioSource.PlayOneShot(SwitchPage);
+            //audioSource.PlayOneShot(SwitchPage);
             NextColor();
         }
 

@@ -3942,9 +3942,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212165013}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.0000000018626454, z: -0, w: 1}
   m_LocalPosition: {x: -3.3312569, y: 21.459312, z: 29.393167}
-  m_LocalScale: {x: 0.29327893, y: 0.554, z: 0.0172}
+  m_LocalScale: {x: 0.29327893, y: 0.55399996, z: 0.0172}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104950607}
@@ -5764,7 +5764,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780203271}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -36.52, y: 8.92, z: -32.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5978,6 +5978,41 @@ PrefabInstance:
       propertyPath: lookaroundscript
       value: 
       objectReference: {fileID: 1533895718}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: m2
+      value: 
+      objectReference: {fileID: 1470612880}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: p4
+      value: 
+      objectReference: {fileID: 1559719714}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: Phc
+      value: 
+      objectReference: {fileID: 424838504}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: SwitchPage
+      value: 
+      objectReference: {fileID: 8300000, guid: 54d706ecf5c5987478b004cf796bf917, type: 3}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: KnockonDoor
+      value: 
+      objectReference: {fileID: 8300000, guid: 08990ee26532d3944aeca137bf8e9320, type: 3}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: MonsterShout
+      value: 
+      objectReference: {fileID: 8300000, guid: d63bbbce70882624696e7a490ded83c8, type: 3}
+    - target: {fileID: 7701739524926386437, guid: 6c1c767eeed723b458ba473a5bc0d362,
+        type: 3}
+      propertyPath: monsterWarning
+      value: 
+      objectReference: {fileID: 951276714}
     - target: {fileID: 7883738305010610876, guid: 6c1c767eeed723b458ba473a5bc0d362,
         type: 3}
       propertyPath: m_RootOrder
