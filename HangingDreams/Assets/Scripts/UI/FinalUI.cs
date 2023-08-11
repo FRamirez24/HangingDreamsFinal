@@ -8,7 +8,7 @@ public class FinalUI : MonoBehaviour
 {
     public TMP_Text text1;
     public TMP_Text text2;
-    public Image image1; // Assuming you want to use a SpriteRenderer for the image
+    public RawImage rawImage1; // Assuming you want to use a SpriteRenderer for the image
     private bool openText1 = false; 
     private bool openText2 = false;
     
@@ -75,22 +75,22 @@ public class FinalUI : MonoBehaviour
         float fadeDuration = 2; // Duration of the fade-in effect in seconds
         float currentTime = 0;
 
-        yield return new WaitForSeconds(1); // Stagger the start of image1's fade-in
+        yield return new WaitForSeconds(1); // Stagger the start of RawImage1's fade-in
 
         while (currentTime < fadeDuration)
         {
             float normalizedTime = currentTime / fadeDuration;
-            Color newColor = new Color(image1.color.r, image1.color.g, image1.color.b, Mathf.Lerp(0, 1, normalizedTime));
+            Color newColor = new Color(rawImage1.color.r, rawImage1.color.g, rawImage1.color.b, Mathf.Lerp(0, 1, normalizedTime));
 
-            image1.color = newColor;
+            rawImage1.color = newColor;
 
             currentTime += Time.deltaTime;
             yield return null;
         }
 
         // Ensure that the alpha value is set to 1 (fully opaque) after the fade
-        Color finalImageColor = image1.color;
-        finalImageColor.a = 1;
-        image1.color = finalImageColor;
+        Color finalRawImageColor = rawImage1.color;
+        finalRawImageColor.a = 1;
+        rawImage1.color = finalRawImageColor;
     }
 }

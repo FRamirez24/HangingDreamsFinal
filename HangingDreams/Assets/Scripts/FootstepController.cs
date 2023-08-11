@@ -26,7 +26,7 @@ public class FootstepController : MonoBehaviour
             if (Time.time - timeSinceLastFootstep >= Random.Range(minTimeBetweenFootsteps, maxTimeBetweenFootsteps))
             {
                 // Play a random footstep sound from the array
-                AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];
+                AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length-1)];
                 audioSource.PlayOneShot(footstepSound);
 
                 timeSinceLastFootstep = Time.time; // Update the time since the last footstep sound

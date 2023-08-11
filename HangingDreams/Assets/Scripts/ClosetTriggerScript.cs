@@ -28,9 +28,9 @@ public class ClosetTriggerScript : MonoBehaviour
 
     void Start()
     {
-        EC = GameObject.Find("play").GetComponent<ExitCloset>();
+        //EC.
 
-        Instruction.SetActive(false);
+        //Instruction.SetActive(false);
 
         cam1.SetActive(true);
 
